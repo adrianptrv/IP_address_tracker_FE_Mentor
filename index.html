@@ -8,20 +8,60 @@
       <link rel="icon" href="images/favicon.png">
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
       <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-</head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
 <body>
 
   <div class="upper-wrapper">
-    <h1>IP Address Tracker</h1>
+    <div class="visual-content">
+     <h1>IP Address Tracker</h1>
       <!-- <select onchange="changeMap(this)">
         <option value="streets" selected>Streets</option>
         <option value="topo">Topo</option>
         <option value="sattelite">Sattelite</option>
       </select> -->
-        <div>
+        <div class="submit-form">
           <input type="text" id="InField">
-          <input type="submit" id="submitField" onclick="getip()">
+          <button type="submit" id="submitField" onclick="getip()">
+            <i class="fa-solid fa-chevron-right" style="color: #ffffff; font-size: 15px;"></i>
+          </button>
         </div>
+        <br>
+        <div class="info-fields">
+          <div>
+            <span>
+              IP ADDRESS
+            </span>
+            <br>
+            <p>192.168.111.123
+            </p>
+          </div>
+          <div>
+            <span>
+              LOCATION
+            </span>
+            <br>
+            <p>Brooklyn, NY 10001
+            </p>
+          </div>
+          <div>
+            <span>
+              TIMEZONE
+            </span>
+            <br>
+            <p>UTC -05:00
+            </p>
+          </div>
+          <div>
+            <span>
+             ISP
+            </span>
+            <br>
+            <p>SpaceX Starlink
+            </p>
+          </div>
+        </div>
+      </div>
   </div>
 
       <div id="map"></div>
