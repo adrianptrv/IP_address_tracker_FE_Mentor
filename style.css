@@ -52,6 +52,12 @@ h1 {
   justify-content: space-between;
   background-color: white;
 }
+.visual-content .info-fields div:nth-of-type(2) p {
+  width: 175px;
+}
+.visual-content .info-fields div:nth-of-type(4) p {
+  width: 145px;
+}
 .visual-content .info-fields span {
   color: hsl(0, 0%, 17%);
   font-size: 10px;
@@ -61,7 +67,7 @@ h1 {
 }
 
 #InField {
-  width: 33dvw;
+  width: 34dvw;
   padding: 14.5px;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
