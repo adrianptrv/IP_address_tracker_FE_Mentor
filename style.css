@@ -30,7 +30,7 @@ h1 {
 
 .visual-content {
   border: 1px solid red;
-  width: 76dvw;
+  width: 77dvw;
   margin: auto;
   position: relative;
   top: 3dvh;
@@ -51,6 +51,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   background-color: white;
+  border-radius: 15px;
 }
 .visual-content .info-fields div:nth-of-type(2) p {
   width: 175px;
@@ -61,9 +62,22 @@ h1 {
 .visual-content .info-fields span {
   color: hsl(0, 0%, 17%);
   font-size: 10px;
+  font-weight: 500;
 }
 .visual-content .info-fields p {
   font-size: 20px;
+}
+.visual-content .info-fields div {
+  flex: 1;
+}
+.visual-content .info-fields div p {
+  margin-top: 10px;
+  padding: 0px 0px 5px 20px;
+  font-weight: 700;
+}
+.visual-content .info-fields div span {
+  padding: 23px 0 0 20px;
+  display: inline-block;
 }
 
 #InField {
@@ -86,4 +100,12 @@ h1 {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   margin-left: -4px;
+}
+
+.info-fields > div::before {
+  height: 60px;
+  border-left: 1px solid hsl(0, 0%, 59%);
+  content: "";
+  position: absolute;
+  bottom: 30px;
 }/*# sourceMappingURL=style.css.map */
