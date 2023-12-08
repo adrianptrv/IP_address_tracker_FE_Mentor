@@ -1,10 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 #map {
-  height: 73dvh;
+  height: 71dvh;
   width: 100%;
   position: absolute;
   bottom: 0;
   z-index: 1;
+}
+@media only screen and (max-width: 900px) {
+  #map {
+    height: 68dvh;
+  }
+}
+@media only screen and (max-width: 450px) {
+  #map {
+    height: 60dvh;
+  }
 }
 
 body {
@@ -18,9 +28,19 @@ h1 {
 
 .upper-wrapper {
   background-image: url(images/pattern-bg-desktop.png);
-  height: 27dvh;
+  height: 29dvh;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+@media only screen and (max-width: 900px) {
+  .upper-wrapper {
+    height: 32dvh;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .upper-wrapper {
+    height: 40dvh;
+  }
 }
 @media only screen and (max-width: 600px) {
   .upper-wrapper {
@@ -36,16 +56,32 @@ h1 {
   top: 2.5dvh;
   z-index: 2;
 }
+@media only screen and (max-width: 450px) {
+  .visual-content {
+    width: 87dvw;
+  }
+}
 .visual-content h1 {
   margin: auto;
   width: 275px;
   color: white;
   font-weight: 500;
 }
+@media only screen and (max-width: 450px) {
+  .visual-content h1 {
+    width: 205px;
+    font-size: 24px;
+  }
+}
 .visual-content .submit-form {
   margin: auto;
   width: 39dvw;
   margin-top: 25px;
+}
+@media only screen and (max-width: 900px) {
+  .visual-content .submit-form {
+    width: unset;
+  }
 }
 .visual-content .info-fields {
   display: flex;
@@ -54,19 +90,57 @@ h1 {
   border-radius: 15px;
   margin-top: 4dvh;
 }
+@media only screen and (max-width: 900px) {
+  .visual-content .info-fields {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .visual-content .info-fields div:nth-of-type(2) p {
   width: 175px;
+}
+@media only screen and (max-width: 900px) {
+  .visual-content .info-fields div:nth-of-type(2) p {
+    width: unset;
+  }
 }
 .visual-content .info-fields div:nth-of-type(4) p {
   width: 145px;
 }
+@media only screen and (max-width: 900px) {
+  .visual-content .info-fields div:nth-of-type(4) p {
+    width: unset;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .visual-content .info-fields div:nth-of-type(2) span {
+    padding-left: 55px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .visual-content .info-fields div:nth-of-type(3) span {
+    padding-left: 19px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .visual-content .info-fields div:nth-of-type(4) span {
+    padding-left: 58px;
+  }
+}
 .visual-content .info-fields span {
-  color: hsl(0, 0%, 17%);
-  font-size: 10px;
-  font-weight: 500;
+  font-size: 9px;
+  font-weight: bold;
+  color: hsl(0, 0%, 59%);
+  letter-spacing: 2px;
 }
 .visual-content .info-fields p {
   font-size: 20px;
+}
+@media only screen and (max-width: 450px) {
+  .visual-content .info-fields p {
+    font-size: 18px;
+  }
 }
 .visual-content .info-fields div {
   flex: 1;
@@ -76,9 +150,21 @@ h1 {
   padding: 0px 0px 15px 20px;
   font-weight: 700;
 }
+@media only screen and (max-width: 900px) {
+  .visual-content .info-fields div p {
+    padding: unset;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+}
 .visual-content .info-fields div span {
   padding: 23px 0 0 20px;
   display: inline-block;
+}
+@media only screen and (max-width: 900px) {
+  .visual-content .info-fields div span {
+    padding: 12px 0 0 27px;
+  }
 }
 
 #InField {
@@ -89,6 +175,11 @@ h1 {
   border: none;
   font-size: 18px;
   color: hsl(0, 0%, 59%);
+}
+@media only screen and (max-width: 900px) {
+  #InField {
+    width: calc(100% - 75px);
+  }
 }
 
 #submitField {
@@ -103,10 +194,15 @@ h1 {
   margin-left: -4px;
 }
 
-.info-fields > div::before {
+.info-fields > div:nth-child(n+2)::before {
   height: 60px;
-  border-left: 1px solid hsl(0, 0%, 59%);
+  border-left: 1px solid hsla(0, 0%, 59%, 0.5);
   content: "";
   position: absolute;
-  bottom: 30px;
+  bottom: 41px;
+}
+@media only screen and (max-width: 900px) {
+  .info-fields > div:nth-child(n+2)::before {
+    height: 0;
+  }
 }/*# sourceMappingURL=style.css.map */

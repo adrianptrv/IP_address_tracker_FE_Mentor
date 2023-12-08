@@ -42,9 +42,21 @@ fetch('http://ip-api.com/json/' + IPholder)
 }
 //Getting the input IP and running it through the IP API, and then executing the map pinpoint fucntion
 
+
+var blackIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+//Creating new marker color
+
+
 function setMap(){
  map.setView([obj.lat, obj.lon], 14);
- var marker = L.marker([obj.lat, obj.lon]).addTo(map);
+ var marker = L.marker([obj.lat, obj.lon], {icon: blackIcon}).addTo(map);
  marker.bindPopup("<b>" + IPholder + "</b><br>is located here.").openPopup();
 }
 //Map pinpoint function (Setting the exact location on the map with the latitude and longitude we get from the IP API. Then adding a marker and popup with the IP to the same location.) 
