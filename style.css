@@ -16,6 +16,16 @@
     height: 60dvh;
   }
 }
+@media only screen and (max-height: 775px) {
+  #map .leaflet-map-pane {
+    top: 83px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #map .leaflet-top.leaflet-left {
+    display: none;
+  }
+}
 
 body {
   margin: unset;
@@ -171,7 +181,6 @@ h1 {
   border-bottom-left-radius: 15px;
   border: none;
   font-size: 18px;
-  color: hsl(0, 0%, 59%);
 }
 @media only screen and (max-width: 900px) {
   #InField {
@@ -179,6 +188,19 @@ h1 {
     font-size: 16px;
     padding: 16px;
   }
+}
+#InField:hover {
+  cursor: pointer;
+}
+#InField:focus {
+  outline: none;
+  cursor: unset;
+}
+#InField::-moz-placeholder {
+  color: hsl(0, 0%, 59%);
+}
+#InField::placeholder {
+  color: hsl(0, 0%, 59%);
 }
 
 #submitField {
@@ -191,6 +213,9 @@ h1 {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   margin-left: -4px;
+}
+#submitField:hover {
+  cursor: pointer;
 }
 
 .info-fields > div:nth-child(n+2)::before {
