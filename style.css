@@ -222,7 +222,7 @@ h1 {
   border-left: 1px solid hsla(0, 0%, 59%, 0.5);
   content: "";
   position: absolute;
-  bottom: 41px;
+  margin-top: 22px;
 }
 @media only screen and (max-width: 900px) {
   .info-fields > div:nth-child(n+2)::before {
