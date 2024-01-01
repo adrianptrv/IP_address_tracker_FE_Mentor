@@ -1,6 +1,5 @@
 // Setting the Default Map view
-var obj;
-var IPholder;
+var obj, IPholder;
 var map = L.map('map', {
   'minZoom': 3,
   'maxBounds': [
@@ -53,12 +52,13 @@ $(".info-fields div:nth-of-type(4) p").text(obj.isp);
 
 //Getting the input IP and running it through the IP API, and then executing the map pinpoint fucntion
 function getip(){
-IPholder = document.getElementById("InField").value
+IPholder = $("#InField").val();
 fetch('http://ip-api.com/json/' + IPholder)
  .then(res => res.json())
  .then(data => {
    obj = data;
   })
+
  setTimeout( function() {
  setMap();}, 500 )
 }
@@ -68,10 +68,15 @@ fetch('http://ip-api.com/json/' + IPholder)
 
 //Map pinpoint function (Setting the exact location on the map with the latitude and longitude we get from the IP API. Then adding a marker and popup with the IP to the same location.) 
 function setMap(){
+  if (obj.lat === undefined) {
+    console.log("ERORROR")
+  }
+  else {
  map.setView([obj.lat, obj.lon], 14);
  var marker = L.marker([obj.lat, obj.lon], {icon: blackIcon}).addTo(map);
  marker.bindPopup("<b>" + IPholder + "</b><br>is located here.").openPopup();
  updateText();
+  }
 }
 
 
@@ -101,10 +106,10 @@ function changeMap(mapSelected){
 
 
 //Make input text be submitted with Enter key
-document.getElementById("InField").addEventListener("keypress", function(event) {
+$("#InField").bind("keypress", function(event) {
 if (event.key === "Enter") {
   event.preventDefault();
-  document.getElementById("submitField").click();
+  $("#submitField").click();
 }
 });
 
