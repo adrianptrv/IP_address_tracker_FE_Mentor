@@ -39,7 +39,7 @@ fetch('https://geo.ipify.org/api/v2/country,city?apiKey=at_g2i0cJWEDpYku0AA3rUFN
 //Transferring user IP to variables and initiating the map pinpoint fucntion
 setTimeout( function() {
 IPholder = obj.ip;
-setMap();}, 500 )
+setMap();}, 1000 )
 
 
 //Updating the elements content with the current IP info
