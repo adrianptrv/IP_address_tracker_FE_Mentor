@@ -29,7 +29,7 @@ var blackIcon = new L.Icon({
 
 
 //Getting user IP through the API
-fetch('http://ip-api.com/json/')
+fetch('https://geo.ipify.org/api/v2/country,city?apiKey=at_g2i0cJWEDpYku0AA3rUFNuaINNhDm&ipAddress=')
 .then(res => res.json())
 .then(data => {
  obj = data;
@@ -38,15 +38,15 @@ fetch('http://ip-api.com/json/')
 
 //Transferring user IP to variables and initiating the map pinpoint fucntion
 setTimeout( function() {
-IPholder = obj.query;
+IPholder = obj.ip;
 setMap();}, 500 )
 
 
 //Updating the elements content with the current IP info
 function updateText(){
-$(".info-fields div:nth-of-type(1) p").text(obj.query);
-$(".info-fields div:nth-of-type(2) p").text(obj.city + ", " + obj.countryCode + "\n" + obj.zip)
-$(".info-fields div:nth-of-type(3) p").text(obj.timezone);
+$(".info-fields div:nth-of-type(1) p").text(obj.ip);
+$(".info-fields div:nth-of-type(2) p").text(obj.location.city + ", " + obj.location.country + "\n" + obj.location.postalCode)
+$(".info-fields div:nth-of-type(3) p").text(obj.location.timezone);
 $(".info-fields div:nth-of-type(4) p").text(obj.isp);
 }
 
@@ -54,7 +54,7 @@ $(".info-fields div:nth-of-type(4) p").text(obj.isp);
 //Getting the input IP and running it through the IP API, and then executing the map pinpoint fucntion
 function getip(){
 IPholder = $("#InField").val();
-fetch('http://ip-api.com/json/' + IPholder)
+fetch("https://geo.ipify.org/api/v2/country,city?apiKey=at_g2i0cJWEDpYku0AA3rUFNuaINNhDm&ipAddress=" + IPholder)
  .then(res => res.json())
  .then(data => {
    obj = data;
@@ -69,14 +69,14 @@ fetch('http://ip-api.com/json/' + IPholder)
 
 //Map pinpoint function (Setting the exact location on the map with the latitude and longitude we get from the IP API. Then adding a marker and popup with the IP to the same location.) 
 function setMap(){
-  if (obj.lat === undefined) {
+  if (obj.code == '422') {
     $("#InField").css("color", "red");
     $(".error-msg").css("display", "block");
     errmsg = 1;
   }
   else {
- map.setView([obj.lat, obj.lon], 14);
- var marker = L.marker([obj.lat, obj.lon], {icon: blackIcon}).addTo(map);
+ map.setView([obj.location.lat, obj.location.lng], 14);
+ var marker = L.marker([obj.location.lat, obj.location.lng], {icon: blackIcon}).addTo(map);
  marker.bindPopup("<b>" + IPholder + "</b><br>is located here.").openPopup();
  updateText();
  if (errmsg == 1){
