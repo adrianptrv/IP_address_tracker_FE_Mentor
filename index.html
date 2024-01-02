@@ -22,16 +22,17 @@
   <div class="upper-wrapper">
     <div class="visual-content">
      <h1>IP Address Tracker</h1>
-      <!-- <select onchange="changeMap(this)">
+    <select onchange="changeMap(this)">
         <option value="streets" selected>Streets</option>
         <option value="topo">Topo</option>
         <option value="sattelite">Sattelite</option>
-      </select> -->
+    </select> 
         <div class="submit-form">
           <input type="text" id="InField" placeholder="Search for any IP address or domain">
           <button type="submit" id="submitField" onclick="getip()">
             <i class="fa-solid fa-chevron-right" style="color: #ffffff; font-size: 15px;"></i>
           </button>
+          <p class="error-msg"><i class="fa-solid fa-circle-exclamation"></i> Please enter a valid IP address</p>
         </div>
         <div class="info-fields">
           <div>
@@ -39,7 +40,7 @@
               IP ADDRESS
             </span>
             <br>
-            <p>192.168.111.123
+            <p>-
             </p>
           </div>
           <div>
@@ -47,7 +48,7 @@
               LOCATION
             </span>
             <br>
-            <p>Brooklyn, NY 10001
+            <p>-
             </p>
           </div>
           <div>
@@ -55,7 +56,7 @@
               TIMEZONE
             </span>
             <br>
-            <p>UTC -05:00
+            <p>-
             </p>
           </div>
           <div>
@@ -63,7 +64,7 @@
              ISP
             </span>
             <br>
-            <p>SpaceX Starlink
+            <p>-
             </p>
           </div>
         </div>

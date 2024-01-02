@@ -82,6 +82,21 @@ h1 {
     font-size: 24px;
   }
 }
+.visual-content select {
+  position: absolute;
+  margin-top: -31px;
+  height: 37px;
+  width: 84px;
+  border-radius: 15px;
+  padding-left: 6px;
+  outline: none;
+  border: 1px solid black;
+}
+@media only screen and (max-width: 900px) {
+  .visual-content select {
+    display: none;
+  }
+}
 .visual-content .submit-form {
   margin: auto;
   width: 39dvw;
@@ -91,6 +106,20 @@ h1 {
   .visual-content .submit-form {
     width: unset;
     margin-top: 30px;
+  }
+}
+.visual-content .submit-form .error-msg {
+  display: none;
+  position: fixed;
+  color: red;
+  font-weight: bold;
+  margin-left: 12px;
+  margin-top: 6px;
+}
+@media only screen and (max-width: 900px) {
+  .visual-content .submit-form .error-msg {
+    margin-top: 3px;
+    font-size: 13px;
   }
 }
 .visual-content .info-fields {
