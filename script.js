@@ -28,18 +28,14 @@ var blackIcon = new L.Icon({
 });
 
 
-//Getting user IP through the API
-fetch('https://geo.ipify.org/api/v2/country,city?apiKey=at_g2i0cJWEDpYku0AA3rUFNuaINNhDm&ipAddress=')
-.then(res => res.json())
-.then(data => {
- obj = data;
-})
-
-
-//Transferring user IP to variables and initiating the map pinpoint fucntion
-setTimeout( function() {
-IPholder = obj.ip;
-setMap();}, 1000 )
+//Getting the initial user IP through the API
+async function initialIp() {
+  const response = await fetch('https://geo.ipify.org/api/v2/country,city?apiKey=at_g2i0cJWEDpYku0AA3rUFNuaINNhDm&ipAddress=');
+  obj = await response.json();
+  IPholder = obj.ip;
+  setMap();
+}
+initialIp();
 
 
 //Updating the elements content with the current IP info
@@ -50,22 +46,13 @@ $(".info-fields div:nth-of-type(3) p").text(obj.location.timezone);
 $(".info-fields div:nth-of-type(4) p").text(obj.isp);
 }
 
-
 //Getting the input IP and running it through the IP API, and then executing the map pinpoint fucntion
-function getip(){
+async function getip(){
 IPholder = $("#InField").val();
-fetch("https://geo.ipify.org/api/v2/country,city?apiKey=at_g2i0cJWEDpYku0AA3rUFNuaINNhDm&ipAddress=" + IPholder)
- .then(res => res.json())
- .then(data => {
-   obj = data;
-  })
-
- setTimeout( function() {
- setMap();}, 500 )
+const response = await fetch('https://geo.ipify.org/api/v2/country,city?apiKey=at_g2i0cJWEDpYku0AA3rUFNuaINNhDm&ipAddress=' + IPholder);
+obj = await response.json();
+setMap();
 }
-
-
-
 
 //Map pinpoint function (Setting the exact location on the map with the latitude and longitude we get from the IP API. Then adding a marker and popup with the IP to the same location.) 
 function setMap(){
@@ -86,7 +73,6 @@ function setMap(){
  }
   }
 }
-
 
 //Changing map texture feature
 function changeMap(mapSelected){
@@ -111,7 +97,6 @@ function changeMap(mapSelected){
  }).addTo(map);
  }
 }
-
 
 //Make input text be submitted with Enter key
 $("#InField").bind("keypress", function(event) {
