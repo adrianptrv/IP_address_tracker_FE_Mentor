@@ -1,4 +1,4 @@
-# Frontend Mentor - Rock, Paper, Scissors solution
+# Frontend Mentor - IP Address Tracker
 
 This is my solution to the [IP Address Tracker](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0) challenge. 
 
