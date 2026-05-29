@@ -1,3 +1,5 @@
+const API_KEY = "__API_KEY__";
+
 // Setting the Default Map view
 var obj, IPholder;
 var errmsg = 0;
@@ -30,7 +32,7 @@ var blackIcon = new L.Icon({
 
 //Getting the initial user IP through the API
 async function initialIp() {
-  const response = await fetch('https://geo.ipify.org/api/v2/country,city?apiKey=at_g2i0cJWEDpYku0AA3rUFNuaINNhDm&ipAddress=');
+  const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=`);
   obj = await response.json();
   IPholder = obj.ip;
   setMap();
@@ -49,7 +51,7 @@ $(".info-fields div:nth-of-type(4) p").text(obj.isp);
 //Getting the input IP and running it through the IP API, and then executing the map pinpoint fucntion
 async function getip(){
 IPholder = $("#InField").val();
-const response = await fetch('https://geo.ipify.org/api/v2/country,city?apiKey=at_g2i0cJWEDpYku0AA3rUFNuaINNhDm&ipAddress=' + IPholder);
+const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${IPholder}`);
 obj = await response.json();
 setMap();
 }

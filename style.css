@@ -1,10 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 #map {
   height: 71dvh;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  z-index: 1;
 }
 @media only screen and (max-width: 900px) {
   #map {
@@ -15,6 +11,12 @@
   #map {
     height: 60dvh;
   }
+}
+#map {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
 }
 @media only screen and (max-height: 775px) {
   #map .leaflet-map-pane {
@@ -39,8 +41,6 @@ h1 {
 .upper-wrapper {
   background-image: url(images/pattern-bg-desktop.png);
   height: 29dvh;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
 }
 @media only screen and (max-width: 900px) {
   .upper-wrapper {
@@ -52,6 +52,10 @@ h1 {
     height: 40dvh;
   }
 }
+.upper-wrapper {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 @media only screen and (max-width: 600px) {
   .upper-wrapper {
     background-image: url(images/pattern-bg-mobile.png);
@@ -60,15 +64,17 @@ h1 {
 
 .visual-content {
   width: 77dvw;
-  margin: auto;
-  position: relative;
-  top: 2.5dvh;
-  z-index: 2;
 }
 @media only screen and (max-width: 450px) {
   .visual-content {
     width: 87dvw;
   }
+}
+.visual-content {
+  margin: auto;
+  position: relative;
+  top: 2.5dvh;
+  z-index: 2;
 }
 .visual-content h1 {
   margin: auto;
@@ -258,4 +264,25 @@ h1 {
   .info-fields > div:nth-child(n+2)::before {
     height: 0;
   }
+}
+
+.leaflet-pane .leaflet-popup-tip {
+  transform: unset;
+  -webkit-transform: unset;
+  padding: unset;
+  width: 0;
+  height: 0;
+  margin: unset;
+  margin-top: -2px;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 13px solid #fff;
+  background: none;
+  box-shadow: none;
+}
+.leaflet-pane .leaflet-popup-tip-container {
+  width: auto;
+  height: auto;
+  margin-left: -13px;
+  overflow: unset;
 }/*# sourceMappingURL=style.css.map */

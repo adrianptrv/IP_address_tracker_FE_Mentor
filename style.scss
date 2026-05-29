@@ -224,5 +224,28 @@ h1{
     }
 }
 
-// 
-// }
+.leaflet-pane {
+
+  .leaflet-popup-tip {
+    transform: unset;
+    -webkit-transform: unset;
+    padding: unset;
+    width: 0;
+    height: 0;
+    margin: unset;
+    margin-top: -2px;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-top: 13px solid #fff;
+    background: none;
+    box-shadow: none;
+  }
+
+    .leaflet-popup-tip-container {
+       width: auto;
+       height: auto;
+       margin-left: -13px;
+       overflow: unset;
+    }
+
+}
